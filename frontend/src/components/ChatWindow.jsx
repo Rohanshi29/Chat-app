@@ -733,9 +733,6 @@ const ChatWindow = ({ chat, onChatUpdated }) => {
                   {msg.edited && !msg.isDeleted && <em className="edited-label">edited </em>}
                   {formatTime(msg.createdAt)} {readTicks(msg)}
                 </span>
-                <span style={{ display: "block", fontSize: "9px", opacity: 0.6, wordBreak: "break-all" }}>
-                  DEBUG sender:{String(msg.sender._id)} me:{String(user._id)} isOwn:{String(isOwn)}
-                </span>
               </div>
             </div>
           );

@@ -1027,8 +1027,8 @@ body {
 /* ================= AI assistant widget ================= */
 .ai-assistant-widget {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 76px;
+  left: 344px;
   z-index: 200;
 }
 
@@ -1047,7 +1047,7 @@ body {
 .ai-assistant-panel {
   position: absolute;
   bottom: 66px;
-  right: 0;
+  left: 0;
   width: 320px;
   height: 420px;
   background: #fff;
@@ -1318,4 +1318,73 @@ body {
   font-size: 0.88rem;
   resize: none;
   box-sizing: border-box;
+}
+
+/* ================= Color themes ================= */
+[data-color-theme="indigo"] { --accent: #6366f1; }
+[data-color-theme="blue"] { --accent: #2563eb; }
+[data-color-theme="green"] { --accent: #16a34a; }
+[data-color-theme="rose"] { --accent: #e11d48; }
+[data-color-theme="orange"] { --accent: #ea580c; }
+[data-color-theme="violet"] { --accent: #9333ea; }
+
+[data-theme="dark"][data-color-theme="indigo"] { --accent: #818cf8; }
+[data-theme="dark"][data-color-theme="blue"] { --accent: #60a5fa; }
+[data-theme="dark"][data-color-theme="green"] { --accent: #4ade80; }
+[data-theme="dark"][data-color-theme="rose"] { --accent: #fb7185; }
+[data-theme="dark"][data-color-theme="orange"] { --accent: #fb923c; }
+[data-theme="dark"][data-color-theme="violet"] { --accent: #c084fc; }
+
+/* A few spots use a hardcoded purple instead of the --accent variable -
+   pull those in too so the whole app actually re-themes. */
+.new-group-btn,
+.auth-form button,
+.ai-assistant-fab,
+.ai-assistant-header,
+.ai-msg.user,
+.ai-assistant-input button {
+  background: var(--accent) !important;
+}
+
+.auth-form a,
+.message-sender {
+  color: var(--accent) !important;
+}
+
+.message-row.own .message-bubble {
+  background: var(--accent) !important;
+  color: #fff;
+}
+
+/* ================= Theme picker popover ================= */
+.theme-picker-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.theme-picker-popover {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  z-index: 50;
+}
+
+.theme-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.theme-swatch.active {
+  border-color: var(--text);
 }

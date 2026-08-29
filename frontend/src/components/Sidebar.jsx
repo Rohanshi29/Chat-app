@@ -4,6 +4,7 @@ import api, { API_URL } from "../api/axios";
 import { useAuth } from "../context/AuthContext";
 import { useSocket } from "../context/SocketContext";
 import { useTheme } from "../context/ThemeContext";
+import ThemePicker from "./ThemePicker";
 import { usePushNotifications } from "../hooks/usePushNotifications";
 import GroupChatModal from "./GroupChatModal";
 import EditProfileModal from "./EditProfileModal";
@@ -162,6 +163,7 @@ const Sidebar = ({ activeChat, onSelectChat, refreshTrigger }) => {
           <button className="icon-btn" title="Toggle theme" onClick={toggleTheme}>
             {theme === "light" ? "🌙" : "☀️"}
           </button>
+          <ThemePicker />
           {user?.role === "admin" && (
             <Link to="/admin" className="icon-btn" title="Admin dashboard">
               🛠️
