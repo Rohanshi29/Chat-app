@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Real-Time Chat Application
 
 A full-stack real-time chat app with one-to-one and group messaging, voice/video calling with screen share, AI features, an admin dashboard, push notifications, and more.
@@ -246,3 +247,6 @@ This is a working foundation, not a production-hardened deployment. Before shipp
 - Group video calling (SFU-based, e.g. via mediasoup or a hosted service like LiveKit/Twilio)
 - Tests (unit + integration)
 - HTTPS and secure cookie/token storage in production
+=======
+# Chat-app
+>>>>>>> 5cf559eb299f6d8f32e35db9c564d9b67d79b32e
